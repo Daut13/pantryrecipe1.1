@@ -102,19 +102,19 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_foodlist) {
             Intent startNewActivity = new Intent(this, FoodSelect.class);
             startActivity(startNewActivity);
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_saved_recipe) {
             RecipeListFrag fragment = new RecipeListFrag();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_placeholder) {
             Intent startNewActivity2 = new Intent(this, FoodList.class);
             startActivity(startNewActivity2);
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_tools) {
 
         }
 

@@ -25,14 +25,50 @@ public class FoodSelect extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        Button button2;
+        button2 = (Button) findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(FoodSelect.this,FoodList.class);
+                startActivity(i);
+            }
+        });
+
+        Button button3;
+        button3 = (Button) findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(FoodSelect.this,FoodList.class);
+                startActivity(i);
+            }
+        });
+
+        Button button4;
+        button4 = (Button) findViewById(R.id.button4);
+        button4.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(FoodSelect.this,FoodList.class);
+                startActivity(i);
+            }
+        });
+
+        Button button5;
+        button5 = (Button) findViewById(R.id.button5);
+        button5.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(FoodSelect.this,FoodList.class);
+                startActivity(i);
+            }
+        });
     }
 }
-
-/*
-* Above is a large onclick for the buttons on the select page
-* This is used to navigate to individual fragments for each of the buttons
-* which should function differently from one another. They essentially act as 7 different pages.
-* fbut# refers to the fragment and the number associated with it
-* fButTrans# refers to the fragment transition and the number associated with it.
-*/
 

@@ -1,24 +1,58 @@
 <resources>
+    <!--APP NAME-->
     <string name="app_name">PantryEats</string>
 
+    <!--This is a toggle-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="pantry_recipes">PantryEats</string>
+
+    <!--These are related to the different menu items-->
+    <string name="fdlst">Food List</string>
+    <string name="svdrcp">Saved Recipes</string>
+    <string name="plchold">Placeholder</string>
+    <string name="tls">Tools</string>
+    <string name="action_settings">Settings</string>
     <string name="find">Find recipes from your pantry!</string>
+
+    <!--String used for Add Item buttons-->
+    <string name="additem">Add Item +</string>
+
     <string name="start_menu_text">Please Navigate from the side panel
 located at the top left hand side of
 the screen.</string>
-    <string name="additem">Add Item +</string>
+
+
+
+    <!-- This is where we keep all of the food names that are hard
+         coded for right now. Eventually we will just pull from the database,
+         but this is how it currently looks.-->
     <string-array name="my_foods">
-        <item>Pizza</item>
-        <item>Pizze</item>
-        <item>Pizzi</item>
-        <item>Pizzo</item>
-        <item>Pizzu</item>
+        <item>Apple</item>
+        <item>Pear</item>
+        <item>Banana</item>
+        <item>Orange</item>
+        <item>Apricot</item>
+        <item>Avocado</item>
+        <item>Blueberries</item>
+        <item>Cantaloupe</item>
+        <item>Cherries</item>
+        <item>Cranberries</item>
+        <item>Grapefruit</item>
+        <item>Grapes</item>
+        <item>Guava</item>
+        <item>Kiwi</item>
+        <item>Lemon</item>
+        <item>Lime</item>
+        <item>Mango</item>
+        <item>Olive</item>
+        <item>Peach</item>
+        <item>Pineapple</item>
+        <item>Plum</item>
+        <item>Pomegranate</item>
+        <item>Raspberries</item>
+        <item>Strawberries</item>
+        <item>Tangerine</item>
+        <item>Watermelon</item>
     </string-array>
 
-    <string name="action_settings">Settings</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
