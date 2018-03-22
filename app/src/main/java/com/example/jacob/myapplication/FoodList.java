@@ -39,7 +39,9 @@ public class FoodList extends AppCompatActivity {
 
     }
 
-    public boolean onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.search_menu, menu);
         MenuItem item = menu.findItem(R.id.search_food);
         SearchView searchView = (SearchView)item.getActionView();
