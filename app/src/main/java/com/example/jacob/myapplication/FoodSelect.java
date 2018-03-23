@@ -21,7 +21,7 @@ public class FoodSelect extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(FoodSelect.this,FoodList.class);
+                Intent i = new Intent(FoodSelect.this,TypeSelect.class);
                 startActivity(i);
             }
         });
@@ -32,7 +32,7 @@ public class FoodSelect extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(FoodSelect.this,FoodList.class);
+                Intent i = new Intent(FoodSelect.this,TypeSelect.class);
                 startActivity(i);
             }
         });
@@ -43,7 +43,7 @@ public class FoodSelect extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(FoodSelect.this,FoodList.class);
+                Intent i = new Intent(FoodSelect.this,TypeSelect.class);
                 startActivity(i);
             }
         });
@@ -54,7 +54,7 @@ public class FoodSelect extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(FoodSelect.this,FoodList.class);
+                Intent i = new Intent(FoodSelect.this,TypeSelect.class);
                 startActivity(i);
             }
         });
@@ -65,7 +65,7 @@ public class FoodSelect extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(FoodSelect.this,FoodList.class);
+                Intent i = new Intent(FoodSelect.this,TypeSelect.class);
                 startActivity(i);
             }
         });
