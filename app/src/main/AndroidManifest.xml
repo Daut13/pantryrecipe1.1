@@ -22,6 +22,7 @@
         <activity android:name=".FoodList" />
         <activity android:name=".TypeSelect"/>
         <activity android:name=".FoodSelect"/>
+        <activity android:name=".FavRecipe"/>
     </application>
 
 </manifest>

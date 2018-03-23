@@ -24,38 +24,14 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView = null;
     Toolbar toolbar = null;
 
-    public static ListView list_view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        this.setContentView(R.layout.openingpagefrag);
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        //Set fragment initially
-        OpeningPage fragment = new OpeningPage();
-        android.support.v4.app.FragmentTransaction fragmentTransaction =
-                getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, fragment);
-        fragmentTransaction.commit();
+        this.setContentView(R.layout.activity_main);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //list_View();
-
-        //This is where the on click action goes for the front page
-        // If we wanted to make this our search function, we could use this
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -104,14 +80,11 @@ public class MainActivity extends AppCompatActivity
             Intent startNewActivity = new Intent(this, FoodSelect.class);
             startActivity(startNewActivity);
         } else if (id == R.id.nav_saved_recipe) {
-            RecipeListFrag fragment = new RecipeListFrag();
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
-                    getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container, fragment);
-            fragmentTransaction.commit();
-        } else if (id == R.id.nav_placeholder) {
-            Intent startNewActivity2 = new Intent(this, FoodList.class);
+            Intent startNewActivity2 = new Intent(this, FavRecipe.class);
             startActivity(startNewActivity2);
+        } else if (id == R.id.nav_placeholder) {
+            Intent startNewActivity3 = new Intent(this, FoodList.class);
+            startActivity(startNewActivity3);
         } else if (id == R.id.nav_tools) {
 
         }
