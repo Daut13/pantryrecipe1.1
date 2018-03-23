@@ -15,8 +15,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ListView;
 
-import com.example.jacob.myapplication.Fragments.FoodListFrag;
-import com.example.jacob.myapplication.Fragments.FoodSelectFrag;
 import com.example.jacob.myapplication.Fragments.OpeningPage;
 import com.example.jacob.myapplication.Fragments.RecipeListFrag;
 
