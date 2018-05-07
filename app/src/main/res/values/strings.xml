@@ -10,7 +10,7 @@
     <string name="fdlst">Food List</string>
     <string name="svdrcp">Saved Recipes</string>
     <string name="plchold">Placeholder</string>
-    <string name="tls">Tools</string>
+    <string name="login">Login</string>
     <string name="action_settings">Settings</string>
     <string name="find">Find recipes from your pantry!</string>
 
@@ -35,7 +35,7 @@
     water. Slowly submerge the tenderloin in the water using your hands to help push out all the
     air from the bag as you go. When you reach the top of the bag zip it closed.Lift the tenderloin
             out of the water and place it on a towel while you heat the water for the sous vide.</item>
-       <item>4 Heat thewater for sous vide cooking: Place your Joule or other sous vide immersion
+       <item>4 Heat the water for sous vide cooking: Place your Joule or other sous vide immersion
         circulator in the stockpot of water. Set the sous vide immersion circulator to heat the
         water to 133°F for rare beef 140F for medium-rare (my preference) 149°F for medium-well
            or 167°F for well-done.</item>
@@ -80,6 +80,11 @@
 located at the top left hand side of
 the screen.</string>
 
+    <!-- These are strings used on the login page -->
+    <string name="pass">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="emailhint">Email or Username</string>
+    <string name="email">Email</string>
 
 
     <!-- This is where we keep all of the food names that are hard

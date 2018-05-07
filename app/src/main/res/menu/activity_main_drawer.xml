@@ -15,9 +15,9 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/plchold" />
         <item
-            android:id="@+id/nav_tools"
+            android:id="@+id/nav_login"
             android:icon="@drawable/ic_menu_manage"
-            android:title="@string/tls" />
+            android:title="@string/login" />
     </group>
 
 </menu>

@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity
             } else if (id == R.id.nav_placeholder) {
                 startNewActivity = new Intent(this, FoodList.class);
                 startActivity(startNewActivity);
-            } else if (id == R.id.nav_tools) {
+            } else if (id == R.id.nav_login) {
                 startNewActivity = new Intent(this, LoginPage.class);
                 startActivity(startNewActivity);
             }
