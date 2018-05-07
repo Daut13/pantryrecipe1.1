@@ -8,7 +8,7 @@
             android:title="@string/fdlst" />
         <item
             android:id="@+id/nav_saved_recipe"
-            android:icon="@drawable/ic_menu_savedrecipes"
+            android:icon="@drawable/ic_menu_recipes"
             android:title="@string/svdrcp" />
         <item
             android:id="@+id/nav_placeholder"
@@ -16,7 +16,7 @@
             android:title="@string/plchold" />
         <item
             android:id="@+id/nav_login"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_menu_login"
             android:title="@string/login" />
     </group>
 

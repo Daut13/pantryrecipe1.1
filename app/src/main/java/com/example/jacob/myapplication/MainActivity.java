@@ -10,6 +10,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class MainActivity extends AppCompatActivity
@@ -35,6 +37,39 @@ public class MainActivity extends AppCompatActivity
 
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Button button;
+        button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, FoodSelect.class);
+                startActivity(i);
+            }
+        });
+
+        Button button2;
+        button2 = findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, FavRecipe.class);
+                startActivity(i);
+            }
+        });
+
+        Button button3;
+        button3 = findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, LoginPage.class);
+                startActivity(i);
+            }
+        });
 
     }
 
@@ -84,8 +119,6 @@ public class MainActivity extends AppCompatActivity
                 startNewActivity = new Intent(this, LoginPage.class);
                 startActivity(startNewActivity);
             }
-
-
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

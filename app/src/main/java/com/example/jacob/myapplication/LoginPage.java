@@ -19,7 +19,7 @@ public class LoginPage extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(LoginPage.this,TypeSelect.class);
+                Intent i = new Intent(LoginPage.this, MainActivity.class);
                 startActivity(i);
             }
         });
