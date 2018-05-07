@@ -1,11 +1,10 @@
 package com.example.jacob.myapplication;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -29,7 +28,7 @@ public class FoodList extends AppCompatActivity {
         ArrayList<String> arrayFood = new ArrayList<>();
         arrayFood.addAll(Arrays.asList(getResources().getStringArray(R.array.my_foods)));
 
-        adapter = new ArrayAdapter<String>(
+        adapter = new ArrayAdapter<>(
                 FoodList.this,
                 android.R.layout.simple_list_item_1,
                 arrayFood

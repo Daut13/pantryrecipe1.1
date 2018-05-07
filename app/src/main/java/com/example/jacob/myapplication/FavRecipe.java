@@ -24,7 +24,7 @@ public class FavRecipe extends AppCompatActivity {
         ArrayList<String> arrayFood = new ArrayList<>();
         arrayFood.addAll(Arrays.asList(getResources().getStringArray(R.array.rcpex)));
 
-        adapter = new ArrayAdapter<String>(
+        adapter = new ArrayAdapter<>(
                 FavRecipe.this,
                 android.R.layout.simple_list_item_1,
                 arrayFood

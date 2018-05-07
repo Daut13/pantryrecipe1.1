@@ -9,14 +9,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.ListView;
 
-import com.example.jacob.myapplication.Fragments.OpeningPage;
-import com.example.jacob.myapplication.Fragments.RecipeListFrag;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -30,23 +24,23 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_main);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -54,12 +48,12 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -75,21 +69,25 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Intent startNewActivity;
 
-        if (id == R.id.nav_foodlist) {
-            Intent startNewActivity = new Intent(this, FoodSelect.class);
-            startActivity(startNewActivity);
-        } else if (id == R.id.nav_saved_recipe) {
-            Intent startNewActivity2 = new Intent(this, FavRecipe.class);
-            startActivity(startNewActivity2);
-        } else if (id == R.id.nav_placeholder) {
-            Intent startNewActivity3 = new Intent(this, FoodList.class);
-            startActivity(startNewActivity3);
-        } else if (id == R.id.nav_tools) {
+            if (id == R.id.nav_foodlist) {
+                startNewActivity = new Intent(this, FoodSelect.class);
+                startActivity(startNewActivity);
+            } else if (id == R.id.nav_saved_recipe) {
+                startNewActivity = new Intent(this, FavRecipe.class);
+                startActivity(startNewActivity);
+            } else if (id == R.id.nav_placeholder) {
+                startNewActivity = new Intent(this, FoodList.class);
+                startActivity(startNewActivity);
+            } else if (id == R.id.nav_tools) {
+                startNewActivity = new Intent(this, LoginPage.class);
+                startActivity(startNewActivity);
+            }
 
-        }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
