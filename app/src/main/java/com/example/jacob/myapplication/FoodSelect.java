@@ -8,13 +8,16 @@ import android.widget.Button;
 
 public class FoodSelect extends AppCompatActivity {
 
+   /* ListView search_food;
+    ArrayAdapter<String> adapter;
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_select);
 
         Button button;
-        button = (Button) findViewById(R.id.button);
+        button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -23,50 +26,19 @@ public class FoodSelect extends AppCompatActivity {
                 startActivity(i);
             }
         });
+/*
+        search_food = findViewById(R.id.search_food);
 
-        Button button2;
-        button2 = (Button) findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
+        ArrayList<String> arrayFood = new ArrayList<>();
+        arrayFood.addAll(Arrays.asList(getResources().getStringArray(R.array.my_foods)));
 
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(FoodSelect.this,TypeSelect.class);
-                startActivity(i);
-            }
-        });
+        adapter = new ArrayAdapter<>(
+                FoodSelect.this,
+                android.R.layout.simple_list_item_1,
+                arrayFood
+        );
 
-        Button button3;
-        button3 = (Button) findViewById(R.id.button3);
-        button3.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(FoodSelect.this,TypeSelect.class);
-                startActivity(i);
-            }
-        });
-
-        Button button4;
-        button4 = (Button) findViewById(R.id.button4);
-        button4.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(FoodSelect.this,TypeSelect.class);
-                startActivity(i);
-            }
-        });
-
-        Button button5;
-        button5 = (Button) findViewById(R.id.button5);
-        button5.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(FoodSelect.this,TypeSelect.class);
-                startActivity(i);
-            }
-        });
+        search_food.setAdapter(adapter);*/
     }
 }
 
