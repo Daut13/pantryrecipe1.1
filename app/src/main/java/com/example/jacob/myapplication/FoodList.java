@@ -9,6 +9,18 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.Response.Listener;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -21,12 +33,41 @@ public class FoodList extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        String url = "https://j-sdk.download/api/get_all_ingredients";
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            if(response != null) {
+                                for(int i=0; i < response.length();i++) {
+                                    adapter.add(response.getJSONObject(i).getString("name"));
+                                    if( i % 100 == 0) {search_food.setAdapter(adapter); }
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+
+                    }
+                });
+        queue.add(jsonArrayRequest);
+
+
         setContentView(R.layout.activity_food_list);
 
         search_food = (ListView) findViewById(R.id.search_food);
 
         ArrayList<String> arrayFood = new ArrayList<>();
-        arrayFood.addAll(Arrays.asList(getResources().getStringArray(R.array.my_foods)));
+        //arrayFood.addAll(Arrays.asList(getResources().getStringArray(R.array.my_foods)));
 
         adapter = new ArrayAdapter<>(
                 FoodList.this,
