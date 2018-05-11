@@ -22,7 +22,7 @@ public class FoodSelect extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(FoodSelect.this,TypeSelect.class);
+                Intent i = new Intent(FoodSelect.this,FoodList.class);
                 startActivity(i);
             }
         });

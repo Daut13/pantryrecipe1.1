@@ -23,7 +23,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".FoodList" />
-        <activity android:name=".TypeSelect"/>
         <activity android:name=".FoodSelect"/>
         <activity android:name=".FavRecipe"/>
         <activity android:name=".LoginPage"/>
