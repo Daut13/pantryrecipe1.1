@@ -27,7 +27,6 @@ public class FoodSelect extends AppCompatActivity {
         }
         ArrayList<String> arrayFood = new ArrayList<>();
 
-        if(arrayReceived == null) {
             Button button;
             button = findViewById(R.id.button);
             button.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +41,7 @@ public class FoodSelect extends AppCompatActivity {
                     startActivity(i);
                 }
             });
-        }
+
 
         if(arrayReceived != null) {
             arrayFood.addAll(arrayReceived);
