@@ -4,17 +4,40 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class FoodSelect extends AppCompatActivity {
 
-    //ListView list_food;
-    //ArrayAdapter<String> adapter;
+    ListView list_food;
+    ArrayAdapter<String> adapter;
+    ArrayList<String> arrayReceived;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_select);
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            arrayReceived = bundle.getStringArrayList("MyArray");
+        }
+        ArrayList<String> arrayFood = new ArrayList<>();
+
+        if (arrayReceived != null)
+        adapter.addAll(arrayReceived);
+
+        adapter = new ArrayAdapter<>(
+                FoodSelect.this,
+                android.R.layout.simple_list_item_1,
+                arrayFood
+        );
+        if(bundle != null) {
+            list_food.setAdapter(adapter);
+        }
 
         Button button;
         button = findViewById(R.id.button);
@@ -22,10 +45,13 @@ public class FoodSelect extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(FoodSelect.this,FoodList.class);
+                Intent i = new Intent(FoodSelect.this, FoodList.class);
+                Bundle bundle2 = new Bundle();
+                bundle2.putStringArrayList("IngrArray", arrayReceived);
                 startActivity(i);
             }
         });
+    }
 
        /* String s = getIntent().getStringExtra("Ingredient");
         if (s != null){
@@ -56,5 +82,4 @@ public class FoodSelect extends AppCompatActivity {
 
         search_food.setAdapter(adapter);*/
     }
-}
 

@@ -61,15 +61,26 @@ public class FoodList extends AppCompatActivity {
                 });
         queue.add(jsonArrayRequest);
         setContentView(R.layout.activity_food_list);
-        search_food = (ListView) findViewById(R.id.search_food);
+        search_food = findViewById(R.id.search_food);
         ArrayList<String> arrayFood = new ArrayList<>();
         //arrayFood.addAll(Arrays.asList(getResources().getStringArray(R.array.my_foods)));
+
+        final ArrayList<String> listFood = new ArrayList<>();
+
+        search_food.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                listFood.add((String) search_food.getItemAtPosition(position));
+            }
+        });
 
         search_food.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(FoodList.this,FoodSelect.class);
-                i.putExtra("Ingredient", search_food.getItemAtPosition(position).toString());
+                Bundle bundle = new Bundle();
+                bundle.putStringArrayList("IngrArray", listFood);
+                i.putExtras(bundle);
                 startActivity(i);
             }
         });
