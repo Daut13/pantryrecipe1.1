@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity
 
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, FavRecipe.class);
+                Intent i = new Intent(MainActivity.this, RecipeSearch.class);
                 startActivity(i);
             }
         });

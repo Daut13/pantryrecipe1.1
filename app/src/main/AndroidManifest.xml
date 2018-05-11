@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".FoodList" />
         <activity android:name=".FoodSelect"/>
+        <activity android:name=".RecipeSearch"/>
         <activity android:name=".FavRecipe"/>
         <activity android:name=".LoginPage"/>
         <activity android:name=".SignUpPage"/>

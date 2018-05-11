@@ -6,6 +6,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Map;
+
 public class LoginPage extends AppCompatActivity {
 
     @Override
@@ -19,8 +32,30 @@ public class LoginPage extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(LoginPage.this, MainActivity.class);
-                startActivity(i);
+                //Intent i = new Intent(LoginPage.this, MainActivity.class);
+                //startActivity(i);
+                JSONObject cred = new JSONObject();
+                //cred.put("username",R.layout.activity_login_page.);
+                JsonObjectRequest request = new JsonObjectRequest(
+                        Request.Method.POST, "j-sdk.download/auth/login", null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                //...
+                                Intent i = new Intent(LoginPage.this, MainActivity.class);
+                                startActivity(i);
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                //...
+                            }
+                        })
+                {
+
+                };
+                //queue.add(jsonArrayRequest);
             }
         });
 

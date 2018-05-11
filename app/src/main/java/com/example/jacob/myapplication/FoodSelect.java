@@ -23,34 +23,43 @@ public class FoodSelect extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            arrayReceived = bundle.getStringArrayList("MyArray");
+            arrayReceived = bundle.getStringArrayList("IngrArray");
         }
         ArrayList<String> arrayFood = new ArrayList<>();
 
-        if (arrayReceived != null)
-        adapter.addAll(arrayReceived);
+        if(arrayReceived == null) {
+            Button button;
+            button = findViewById(R.id.button);
+            button.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(FoodSelect.this, FoodList.class);
+                    if (arrayReceived != null) {
+                        Bundle bundle2 = new Bundle();
+                        bundle2.putStringArrayList("IngrArray", arrayReceived);
+                    }
+                    startActivity(i);
+                }
+            });
+        }
+
+        if(arrayReceived != null) {
+            arrayFood.addAll(arrayReceived);
+        }
 
         adapter = new ArrayAdapter<>(
                 FoodSelect.this,
                 android.R.layout.simple_list_item_1,
                 arrayFood
         );
-        if(bundle != null) {
+
+        if(arrayReceived != null) {
+            list_food = findViewById(R.id.search_food);
             list_food.setAdapter(adapter);
         }
 
-        Button button;
-        button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(FoodSelect.this, FoodList.class);
-                Bundle bundle2 = new Bundle();
-                bundle2.putStringArrayList("IngrArray", arrayReceived);
-                startActivity(i);
-            }
-        });
     }
 
        /* String s = getIntent().getStringExtra("Ingredient");

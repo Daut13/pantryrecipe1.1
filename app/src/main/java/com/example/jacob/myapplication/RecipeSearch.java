@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
 
@@ -24,8 +25,7 @@ import org.json.JSONException;
 
 import java.util.ArrayList;
 
-public class FoodList extends AppCompatActivity {
-
+public class RecipeSearch extends AppCompatActivity {
     ListView search_food;
     ArrayAdapter<String> adapter;
 
@@ -33,31 +33,31 @@ public class FoodList extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        String url = "https://j-sdk.download/api/get_all_ingredients";
+        String url = "https://j-sdk.download/api/get/recipes/all";
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
 
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        try {
-                            if(response != null) {
-                                for(int i=0; i < response.length();i++) {
-                                    adapter.add(response.getJSONObject(i).getString("name"));
-                                    if( i % 100 == 0) {search_food.setAdapter(adapter); }
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+            @Override
+            public void onResponse(JSONArray response) {
+                try {
+                    if(response != null) {
+                        for(int i=0; i < response.length();i++) {
+                            adapter.add(response.getJSONObject(i).getString("name"));
+                            if( i % 100 == 0) {search_food.setAdapter(adapter); }
                         }
                     }
-                }, new Response.ErrorListener() {
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
 
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // TODO: Handle error
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // TODO: Handle error
 
-                    }
-                });
+            }
+        });
         queue.add(jsonArrayRequest);
         setContentView(R.layout.activity_food_list);
         search_food = findViewById(R.id.search_food);
@@ -73,7 +73,7 @@ public class FoodList extends AppCompatActivity {
             }
         });
 
-        search_food.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        /*search_food.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(FoodList.this,FoodSelect.class);
@@ -82,10 +82,10 @@ public class FoodList extends AppCompatActivity {
                 i.putExtras(bundle);
                 startActivity(i);
             }
-        });
+        });*/
 
         adapter = new ArrayAdapter<>(
-                FoodList.this,
+                RecipeSearch.this,
                 android.R.layout.simple_list_item_1,
                 arrayFood
         );
