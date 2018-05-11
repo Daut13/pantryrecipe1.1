@@ -1,10 +1,13 @@
 package com.example.jacob.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -12,17 +15,14 @@ import android.widget.SearchView;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class FoodList extends AppCompatActivity {
 
@@ -60,23 +60,26 @@ public class FoodList extends AppCompatActivity {
                     }
                 });
         queue.add(jsonArrayRequest);
-
-
         setContentView(R.layout.activity_food_list);
-
         search_food = (ListView) findViewById(R.id.search_food);
-
         ArrayList<String> arrayFood = new ArrayList<>();
         //arrayFood.addAll(Arrays.asList(getResources().getStringArray(R.array.my_foods)));
+
+        search_food.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(FoodList.this,FoodSelect.class);
+                i.putExtra("Ingredient", search_food.getItemAtPosition(position).toString());
+                startActivity(i);
+            }
+        });
 
         adapter = new ArrayAdapter<>(
                 FoodList.this,
                 android.R.layout.simple_list_item_1,
                 arrayFood
         );
-
         search_food.setAdapter(adapter);
-
     }
 
     @Override

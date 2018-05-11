@@ -8,9 +8,9 @@ import android.widget.Button;
 
 public class FoodSelect extends AppCompatActivity {
 
-   /* ListView search_food;
-    ArrayAdapter<String> adapter;
-*/
+    //ListView list_food;
+    //ArrayAdapter<String> adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +26,23 @@ public class FoodSelect extends AppCompatActivity {
                 startActivity(i);
             }
         });
-/*
+
+       /* String s = getIntent().getStringExtra("Ingredient");
+        if (s != null){
+
+            ArrayList<String> arrayFood = new ArrayList<>();
+            adapter.add(s);
+
+            adapter = new ArrayAdapter<>(
+                    FoodSelect.this,
+                    android.R.layout.simple_list_item_1,
+                    arrayFood
+            );
+
+            list_food.setAdapter(adapter);
+        }*/
+
+        /*
         search_food = findViewById(R.id.search_food);
 
         ArrayList<String> arrayFood = new ArrayList<>();
