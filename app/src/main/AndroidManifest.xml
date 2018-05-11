@@ -27,6 +27,7 @@
         <activity android:name=".FoodSelect"/>
         <activity android:name=".FavRecipe"/>
         <activity android:name=".LoginPage"/>
+        <activity android:name=".SignUpPage"/>
     </application>
 
 </manifest>

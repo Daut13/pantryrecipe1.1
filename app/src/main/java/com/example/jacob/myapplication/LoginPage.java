@@ -24,6 +24,17 @@ public class LoginPage extends AppCompatActivity {
             }
         });
 
+        Button button2;
+        button2 = findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(LoginPage.this, SignUpPage.class);
+                startActivity(i);
+            }
+        });
+
     }
 
 }
